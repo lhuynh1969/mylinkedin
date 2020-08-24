@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>List of coworkers</h1>
+
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+
+    {% for person in coworkers_list %}
+    <tr>
+        <td>{{ person[0] }}</td>
+        <td>{{ person[1] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
