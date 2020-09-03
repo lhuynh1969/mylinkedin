@@ -18,7 +18,7 @@ def user(name):
 
 @app.route("/ikea/coworkers/")
 def list_coworkers():
-    fileoutput = open('/Users/linh.huynh2/mylinkedin/src/coworkers.csv', 'r')
+    fileoutput = open('src/templates/coworkers.csv', 'r')
     myreader = csv.reader(fileoutput)
 
     lc = []
