@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+import csv
 
 
 app = Flask(__name__)
@@ -17,11 +18,11 @@ def user(name):
 
 @app.route("/ikea/coworkers/")
 def list_coworkers():
-    lc = [
-        ("Lev", "Ivanov"),
-        ("Linh", "Huynh"),
-        ("Jon", "Kurinsky"),
-        ("John", "Reile")
-    ]
+    fileoutput = open('/Users/linh.huynh2/mylinkedin/src/coworkers.csv', 'r')
+    myreader = csv.reader(fileoutput)
+
+    lc = []
+    for workerList in myreader:
+        lc.append(tuple(workerList))
     return render_template("coworkers.html", coworkers_list=lc)
 
