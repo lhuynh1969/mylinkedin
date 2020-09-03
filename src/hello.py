@@ -1,6 +1,6 @@
-from flask import Flask
-from flask import render_template
 import csv
+
+from flask import Flask
 
 
 app = Flask(__name__)
@@ -18,11 +18,13 @@ def user(name):
 
 @app.route("/ikea/coworkers/")
 def list_coworkers():
-    fileoutput = open('src/templates/coworkers.csv', 'r')
-    myreader = csv.reader(fileoutput)
-
     lc = []
-    for workerList in myreader:
-        lc.append(tuple(workerList))
-    return render_template("coworkers.html", coworkers_list=lc)
+    with open('static/coworkers.csv', 'r') as fileoutput:
+        myreader = csv.reader(fileoutput)
+        for workerList in myreader:
+            lc.append(tuple(workerList))
+
+    return {
+        "envelope": lc,
+    }
 
