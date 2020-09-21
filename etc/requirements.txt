@@ -1,0 +1,4 @@
+alembic==1.4.3
+flask
+Flask-SQLAlchemy==2.4.4
+mysqlclient==2.0.1

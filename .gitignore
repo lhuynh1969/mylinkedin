@@ -142,3 +142,4 @@ cython_debug/
 
 tags
 /etc/settings.py
+alembic.ini
