@@ -141,5 +141,5 @@ cython_debug/
 .idea
 
 tags
-/etc/settings.py
+/src/settings.py
 alembic.ini
