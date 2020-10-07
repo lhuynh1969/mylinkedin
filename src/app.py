@@ -10,8 +10,3 @@ app.config["SQLALCHEMY_DATABASE_URI"] = (
 )
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
