@@ -4,7 +4,7 @@ from src.app import app, db
 from src.models.user import User
 
 
-@app.route('/user/', methods=['POST'])
+@app.route('/users/', methods=['POST'])
 def user_create():
     data = request.form
     user = User(
@@ -16,3 +16,9 @@ def user_create():
     db.session.add(user)
     db.session.commit()
     return 'User created', 200
+
+
+@app.route('/users/<int:uid>', methods=['GET'])
+def user_get(uid):
+    user = db.session.query(User).get(uid)
+    return user, 200
